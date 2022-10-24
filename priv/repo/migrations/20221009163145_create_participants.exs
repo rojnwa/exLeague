@@ -9,13 +9,13 @@ defmodule ExLeague.Repo.Migrations.CreateParticipants do
       add :gold_earned, :integer, null: false
       add :items, {:array, :integer}, null: false
       add :kills, :integer, null: false
-      add :summoners, {:array, :integer, null: false}
+      add :summoners, {:array, :integer}, null: false
       add :team_position, :string, null: false
       add :team_id, :integer, null: false
       add :win, :boolean, default: false, null: false
       add :game_id, references(:games, on_delete: :delete_all), null: false
       add :summoner_id, references(:summoners, on_delete: :delete_all), null: false
-      add :opponent_participant_id, references(:participants, on_delete: :delete_all), null: false
+      add :opponent_participant_id, references(:participants, on_delete: :delete_all), null: true
 
       timestamps()
     end
