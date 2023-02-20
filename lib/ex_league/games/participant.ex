@@ -20,7 +20,6 @@ defmodule ExLeague.Games.Participant do
     belongs_to :summoner, Summoner
     belongs_to :opponent_participant, Participant
 
-
     timestamps()
   end
 
